@@ -1,0 +1,52 @@
+{
+  "name": "nums2persian",
+  "version": "1.0.6",
+  "description": "Numbers to Persian!",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hamed228/nums2Persian"
+  },
+  "bugs": {
+    "url": "https://github.com/Hamed228/nums2Persian/issues"
+  },
+  "homepage": "https://amisa.co",
+  "author": "Hamed Mirsmaeili",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "number to letter",
+    "numbers to letter",
+    "number to string",
+    "numbers to string",
+    "number to persian",
+    "numbers to persian",
+    "persian",
+    "digit to letter",
+    "digits to letters",
+    "amisa",
+    "amisa.me",
+    "amisa.co",
+    "amin system",
+    "مبلغ به متن",
+    "عدد به متن",
+    "مبلغ به نوشته",
+    "عدد به نوشته",
+    "مبلغ به حروف",
+    "عدد به حروف",
+    "تبدیل مبلغ به متن",
+    "تبدیل عدد به متن",
+    "تبدیل مبلغ به نوشته",
+    "تبدیل عدد به نوشته",
+    "تبدیل مبلغ به حروف",
+    "تبدیل عدد به حروف",
+    "امین سیستم"
+  ],
+  "files": [
+    "/dist"
+  ]
+}
