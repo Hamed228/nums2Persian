@@ -1,0 +1,1 @@
+export { Num2persian, persianCharToEnglishNumber, persianStringToEnglishString } from './num2persian'
