@@ -1,6 +1,6 @@
 {
   "name": "nums2persian",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Numbers to Persian!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -48,5 +48,8 @@
   ],
   "files": [
     "/dist"
-  ]
+  ],
+  "dependencies": {
+    "jalali-moment": "^3.3.10"
+  }
 }
