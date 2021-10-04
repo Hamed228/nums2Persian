@@ -251,15 +251,15 @@ export const ReturnNext10Year = (value: string): string => {
  * if value is the correcte date, this method return data of value
  * else this method return current date data
  */
-export const ReturnCurrentDateValue = (value: string): number[] => {
+export const ReturnCurrentDateValue = (value: string): [number, number, number] => {
   const m = jalaliMoment(value, jalaliFormat);
   if (m.isValid()) {
-    return value.split('/').map((i) => +i);
+    return value.split('/').map((i) => +i) as any;
   } else {
     return jalaliMoment()
       .format(jalaliFormat)
       .split('/')
-      .map((i) => +i);
+      .map((i) => +i) as any;
   }
 }
 
