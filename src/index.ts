@@ -1,4 +1,4 @@
-export { Num2persian, persianCharToEnglishNumber, persianStringToEnglishString } from './num2persian';
+export { Num2persian, persianCharToEnglishNumber, persianStringToEnglishString, formatNumberShowZero } from './num2persian';
 
 export {
     ReturnCurrentDateValue,
