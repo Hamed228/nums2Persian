@@ -1,6 +1,6 @@
 {
   "name": "nums2persian",
-  "version": "1.0.9",
+  "version": "1.0.11",
   "description": "Numbers to Persian!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -50,6 +50,11 @@
     "/dist"
   ],
   "dependencies": {
+    "@types/node": "^16.11.9",
+    "@types/prop-types": "^15.7.4",
+    "@types/react": "^17.0.36",
+    "@types/scheduler": "^0.16.2",
+    "csstype": "^3.0.10",
     "jalali-moment": "^3.3.10"
   }
 }
