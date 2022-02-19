@@ -1,4 +1,5 @@
 import jalaliMoment from 'jalali-moment';
+import { persianCharToEnglishNumber } from '.';
 
 const jalaliFormat = 'jYYYY/jMM/jDD';
 
@@ -333,5 +334,57 @@ export const ReturnNameMonth = (month: number | string): string => {
       return 'اسفند';
     default:
       return 'نامشخص';
+  }
+}
+
+/**
+ * 
+ * @param e value that it can contain ۱ or 1
+ * @returns {string} that evry ۱ convert to 1 ۲, ۲ convert to 2 and so on and other chars are filter
+ */
+export const normalizeDateString = (
+  e: string,
+): string => {
+  const match = e.match(/^[1-4]\d{3}\/((0[1-6]\/((3[0-1])|([1-2][0-9])|(0[1-9])))|((1[0-2]|(0[7-9]))\/(30|31|([1-2][0-9])|(0[1-9]))))$/g) || [];
+  const result = match.map((e) =>
+    castChars(e).toString()
+  );
+  return result.join('');
+}
+
+const castChars = (e: string): string => {
+  switch (e) {
+    case '1':
+    case '۱':
+      return '1';
+    case '2':
+    case '۲':
+      return '2';
+    case '3':
+    case '۳':
+      return '3';
+    case '4':
+    case '۴':
+      return '4';
+    case '5':
+    case '۵':
+      return '5';
+    case '6':
+    case '۶':
+      return '6';
+    case '7':
+    case '۷':
+      return '7';
+    case '8':
+    case '۸':
+      return '8';
+    case '9':
+    case '۹':
+      return '9';
+    case '0':
+    case '۰':
+      return '0';
+    default:
+      return '/';
   }
 }
