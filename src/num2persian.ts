@@ -265,3 +265,16 @@ String.prototype.NumberPersian2English = function () {
   return persianStringToEnglishString(this, true);
 };
 
+export const formatNumberShowZero = (num: number | null): string => {
+  if (typeof num === 'number') {
+    const result = num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+
+    return result;
+  }
+  return '';
+};
+
+//@ts-ignore
+Number.prototype.formatNumberShowZero = function () {
+  return formatNumberShowZero(this);
+};
