@@ -352,6 +352,70 @@ export const normalizeDateString = (
   return result.join('');
 }
 
+
+
+export const onChangeInputDateBoxShamsiHandleValue = (e: string, value: string) => {
+  e = e.split('').map(i => castChars(i)).join('');
+  if (e.length === 1) {
+    const match = e.match(/[1-4]/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 2) {
+    const match = e.match(/[1-4][0-4]/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 3) {
+    const match = e.match(/[1-4][0-4]\d/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 4) {
+    const match = e.match(/[1-4][0-4]\d\d/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 5) {
+    const match = e.match(/[1-4][0-4]\d\d(\/|-)/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 6) {
+    const match = e.match(/[1-4][0-4]\d\d\/[0-1]/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 7) {
+    const sixth = +(e.substring(5, 6));
+    if (sixth === 1) {
+      const match = e.match(/[1-4][0-4]\d\d\/[1][0-2]/g) || value.split('');
+      return match.join('');
+    } else {
+      const match = e.match(/[1-4][0-4]\d\d\/[0][1-9]/g) || value.split('');
+      return match.join('');
+    }
+  } else if (e.length === 8) {
+    const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\//g) || value.split('');
+    return match.join('');
+  } else if (e.length === 9) {
+    const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[0-3]/g) || value.split('');
+    return match.join('');
+  } else if (e.length === 10) {
+    const eighth = +(e.substring(8, 9));
+    if (eighth === 0) {
+      const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[0][1-9]/g) || value.split('');
+      return match.join('');
+    } else if (eighth === 1) {
+      const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[1][0-9]/g) || value.split('');
+      return match.join('');
+    } else if (eighth === 2) {
+      const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[2][0-9]/g) || value.split('');
+      return match.join('');
+    } else if (eighth === 3) {
+      const sixth = +(e.substring(6, 7));
+      if ([1, 2, 3, 4, 5, 6].includes(sixth)) {
+        const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[3][0-1]/g) || value.split('');
+        return match.join('');
+      } else {
+        const match = e.match(/[1-4][0-4]\d\d\/[0-1][0-9]\/[3][0]/g) || value.split('');
+        return match.join('');
+      }
+
+    }
+  }
+  return e;
+}
+
+
 const castChars = (e: string): string => {
   switch (e) {
     case '1':

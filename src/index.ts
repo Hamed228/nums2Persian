@@ -26,6 +26,7 @@ export {
     ReturnPreviousYear,
     ReturnToday,
     dayOfWeekShamsi,
+    onChangeInputDateBoxShamsiHandleValue,
     isValid,
 } from './utilityDate';
 
