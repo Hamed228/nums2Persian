@@ -134,7 +134,18 @@ export const englishCharToPershianNumber = (e: string): string => {
 
 export const isShiftKey = (e: React.KeyboardEvent<any>) => {
   if (
-    e.shiftKey
+    e.shiftKey && !e.altKey && !e.ctrlKey
+  ) {
+    e.preventDefault();
+    e.stopPropagation();
+    return true;
+  } else {
+    return false;
+  }
+}
+export const isAltKey = (e: React.KeyboardEvent<any>) => {
+  if (
+    e.altKey && !e.shiftKey && !e.ctrlKey
   ) {
     e.preventDefault();
     e.stopPropagation();
