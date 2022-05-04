@@ -1,6 +1,6 @@
 {
   "name": "nums2persian",
-  "version": "1.0.19",
+  "version": "1.0.21",
   "description": "Numbers to Persian!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

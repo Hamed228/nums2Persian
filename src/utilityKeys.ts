@@ -241,7 +241,7 @@ export const isBackspaceKey = (
   disablePreventDefult?: true,
 ) => {
   if (
-    e.key.toUpperCase() === 'backspace'.toUpperCase() &&
+    e.code.toUpperCase() === 'Backspace'.toUpperCase() &&
     isDownTheseKeys(e, shift, ctrl, alt)
   ) {
     if (!disablePreventDefult) {
@@ -260,7 +260,7 @@ export const isDeleteKey = (
   alt?: boolean
 ) => {
   if (
-    e.key.toUpperCase() === 'delete'.toUpperCase() &&
+    e.code.toUpperCase() === 'Delete'.toUpperCase() &&
     isDownTheseKeys(e, shift, ctrl, alt)
   ) {
     e.preventDefault();
@@ -1006,11 +1006,24 @@ export const isViewingKey = (e: React.KeyboardEvent) => {
 export const isEditingKey = (e: React.KeyboardEvent) => {
   return isF4Key(e, false, false, false) || isEKey(e, false, true, false);
 }
-export const isDeletingKey = (e: React.KeyboardEvent) => {
-  return isF8Key(e, false, false, false) || isLKey(e, false, true, false);
+export const isDeletingRowKey = (e: React.KeyboardEvent) => {
+  return isF8Key(e, false, false, false) ||
+    isLKey(e, false, false, true) ||
+    isDeleteKey(e, false, false, true) ||
+    isBackspaceKey(e, false, false, true)
+    ;
+}
+export const isDeletingCellKey = (e: React.KeyboardEvent) => {
+  return isLKey(e, false, true, false) ||
+    isDeleteKey(e, false, true, false) ||
+    isBackspaceKey(e, false, true, false)
+    ;
 }
 export const isPrintingKey = (e: React.KeyboardEvent) => {
   return isF9Key(e, false, false, false) || isPKey(e, false, true, false);
+}
+export const isShowHistoryKey = (e: React.KeyboardEvent) => {
+  return isSpaceKey(e, false, true, false) || isArrowDownKey(e, false, true, false);
 }
 
 
