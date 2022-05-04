@@ -642,7 +642,7 @@ export const isEqualKey = (
   ctrl?: boolean,
   alt?: boolean
 ) => {
-  if (e.key && isDownTheseKeys(e, shift, ctrl, alt) && e.key === '=') {
+  if (e.key && isDownTheseKeys(e, shift, ctrl, alt) && e.key === '=' || e.key === '≠') {
     e.preventDefault();
     return true;
   } else {
