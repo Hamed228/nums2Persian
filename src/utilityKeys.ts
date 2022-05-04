@@ -642,7 +642,9 @@ export const isEqualKey = (
   ctrl?: boolean,
   alt?: boolean
 ) => {
-  if (e.key && isDownTheseKeys(e, shift, ctrl, alt) && e.key === '=' || e.key === '≠') {
+  if (e.key && isDownTheseKeys(e, shift, ctrl, alt) &&
+    e.code.toLowerCase() === 'Equal'.toLowerCase()
+  ) {
     e.preventDefault();
     return true;
   } else {
