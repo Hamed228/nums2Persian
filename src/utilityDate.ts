@@ -29,6 +29,14 @@ export const ReturnMiladyDate = (date: string, format = 'jYYYY/jMM/jDD'): string
     return '';
   }
 }
+export const ReturnPersianDate = (date: string, format = 'YYYY/MM/DD'): string => {
+  const m = jalaliMoment(date, format);
+  if (m.isValid()) {
+    return m.format('jYYYY/jMM/jDD');
+  } else {
+    return '';
+  }
+}
 
 /**
  * give year and month after that
